@@ -49,6 +49,7 @@
             android:contentDescription="@string/white_button"/>
     </LinearLayout>
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_draw"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"

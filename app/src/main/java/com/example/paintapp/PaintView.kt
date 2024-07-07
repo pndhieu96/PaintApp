@@ -86,6 +86,13 @@ class PaintView: View {
             canvas.drawPath(pathList[i], paintBrush)
             Log.e(TAG, "onDraw color: $i - ${colorList[i]}")
         }
+
+        saveDrawData()
+    }
+
+    fun setInitValue(pathList: ArrayList<Path>, colorList: ArrayList<Int>) {
+        this.pathList = pathList
+        this.colorList = colorList
     }
 
     private fun touchStart(x: Float, y: Float) {
@@ -119,5 +126,12 @@ class PaintView: View {
         colorList.clear()
         path.reset()
         invalidate()
+
+        saveDrawData()
+    }
+
+    private fun saveDrawData() {
+        MainApplication.pathList = pathList
+        MainApplication.colorList = colorList
     }
 }
